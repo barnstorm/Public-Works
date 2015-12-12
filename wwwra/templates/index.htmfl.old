@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" href="/styles/styles.css"/>
+	</head>
+	<body>
+	
+	<div class="container">
+	<nav><a href="/">Home</a> | <a href="projects.html">Projects</a> | <a href="about-me.html">About Me</a></nav>
+	
+	{% block content %}
+        
+        
+	<section>
+	<p>Welcome to ABC Inc.<br>
+	Home of great products.</p>
+	</section>
+        
+        
+        
+        
+	{% endblock %}
+	
+	<footer><a href="/">Home</a> | <a href="#">Copyright</a></footer>
+	</div>
+	
+	</body>
+</html>
