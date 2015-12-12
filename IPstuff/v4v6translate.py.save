@@ -1,0 +1,7 @@
+
+
+
+
+
+target-pfx = '%s{:02X}:{:02X}{:02X}:{:02X}00::'.format(*map(int, a))
+
