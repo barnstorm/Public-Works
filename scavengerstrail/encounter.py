@@ -1,0 +1,4 @@
+
+trap
+hostile
+benign
