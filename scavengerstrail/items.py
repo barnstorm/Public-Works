@@ -1,9 +1,12 @@
+import json
 class Item(object):
-    def __init__(self, name, description, load, value):
+    def __init__(self, name, title, description, load, value):
         self.name = name
+        self.title = title
         self.description = description
         self.load = load
         self.value = value
+
 
 
 class Consumable(Item):
@@ -11,13 +14,21 @@ class Consumable(Item):
         self.count = itemDict[u'count']
         self.title = itemDict[u'title']
         self.reqs = itemDict[u'reqs']
-        super(Consumable,self).__init__(name=itemDict[u'name'],description=itemDict[u'description'],load=itemDict[u'load'],value=itemDict[u'value'])
 
 
-class Weapon(Consumable):
+class Weapon(Item):
     def __init__(self, **weapDict):
         self.title = weapDict[u'title']
         self.reqs = weapDict[u'reqs']
-        super(Weapon,self).__init__(name=weapDict[u'name'],description=weapDict[u'description'],load=weapDict[u'load'],value=weapDict[u'value'])
+        self.dmg = weapDict[u'dmg']
+        self.name = weapDict[u'name']
+        self.description = weapDict[u'description']
+        self.load = weapDict[u'load']
+        self.value = weapDict[u'value']
 
-
+class JsonObj(object):
+    def __init__(self, j):
+        if type(j) is str:
+            self.__dict__ = json.loads(j)
+        elif type(j) is dict:
+            self.__str__ = json.dumps(j)
