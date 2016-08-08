@@ -7,14 +7,11 @@ class Item(object):
         self.load = load
         self.value = value
 
-
-
 class Consumable(Item):
     def __init__(self, **itemDict):
         self.count = itemDict[u'count']
         self.title = itemDict[u'title']
         self.reqs = itemDict[u'reqs']
-
 
 class Weapon(Item):
     def __init__(self, **weapDict):

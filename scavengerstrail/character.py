@@ -1,4 +1,3 @@
-from actions import Victory
 import random
 import math
 from actions import Do
