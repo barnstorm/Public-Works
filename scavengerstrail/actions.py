@@ -52,14 +52,16 @@ class Fight(Do):
                     retry = raw_input("Try again for the same?[1] ")
                     if retry == '1':
                         self.round = self.round - 1
-                        if self.round == 0 and self.victory < 2:
+                        if self.round == 0 and self.victory > 1:
+                            print self.con.name + " got away"
+                        if self.round == 0 and self.victory < 1:
                             print 'you lost'
                             self.randDrop(self.pro,self.con)
                         else:
                             self.combat()
                 else:
                     print self.pro.name + " has DIED!"
-                    return 'GAME OVER'
+                    return exit(0), 'GAME OVER'
             if defense == attack:
                 print "Miss"
                 retry = raw_input("Try again for the same?[1] ")
@@ -70,6 +72,8 @@ class Fight(Do):
                         self.randDrop(self.pro,self.con)
                     else:
                         self.combat()
+
+
     def randDrop(self,combatant, victor):
             charinv = combatant.inventory('show')
             inv = {charinv.index(i): i for i in charinv}
