@@ -59,5 +59,5 @@ class Chat(object):
 
 if __name__ == '__main__':
     username="homebot@armstravaganza.com"
-    password="!@qwASzx"
+    password=".asdoo3mfnuiybi78eiuj\asi"
     server=('talk.google.com', 5223)
